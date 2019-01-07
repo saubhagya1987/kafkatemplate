@@ -1,0 +1,36 @@
+For Starting kafka producer , consumer application with spring boot in Wildfly server you need to follow below steps
+==========================================================================================================
+
+1) If Producer is an ant based project
+======================================
+ we need to add below jar files in projects lib directory
+ 1)kafka-clients-2.1.0.jar
+ 2)lz4-java-1.5.0.jar
+ 3)slf4j-api-1.7.25.jar
+ 4)snappy-java-1.1.7.2.jar
+ 5)zstd-jni-1.3.5-4.jar
+ 6)jboss-servlet-api_3.1_spec-1.0.0.Final.jar 
+
+
+ 
+2)If Producer is a Maven based project
+======================================
+ 1) we need to add the below dependency to our pom file.
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+		
+		
+3) If Consumer is a Maven based project
+=======================================
+ 1)we need to add the below dependency to our pom file.
+
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency> 
+		
+		
+4)Before deploying the application in wildfly create one topic in kafka broker 
+ex:-D:\kafka_2.11-2.1.0\bin\windows>kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic Kafka_Example1		
