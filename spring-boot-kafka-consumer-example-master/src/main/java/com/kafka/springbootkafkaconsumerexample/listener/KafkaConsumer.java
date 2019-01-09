@@ -12,7 +12,8 @@ import com.kafka.springbootkafkaconsumerexample.model.User;
 @Service
 public class KafkaConsumer {
 
-    @KafkaListener(topics = "Kafka_Example1", group = "group_id")
+    //@KafkaListener(topics = "Kafka_Example1", group = "group_id")
+    @KafkaListener(topicPartitions = @TopicPartition(topic = "Kafka_Example1", partitions = { "0"}), group = "group_id")
     public void consume(String message) {
         System.out.println("Consumed message: " + message);
     }
