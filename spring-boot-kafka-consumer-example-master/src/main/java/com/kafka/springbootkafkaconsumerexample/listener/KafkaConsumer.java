@@ -1,6 +1,7 @@
 package com.kafka.springbootkafkaconsumerexample.listener;
 
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.annotation.TopicPartition;
 import org.springframework.stereotype.Service;
 
 import com.kafka.springbootkafkaconsumerexample.model.User;
